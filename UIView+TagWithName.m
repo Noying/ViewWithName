@@ -24,5 +24,8 @@
     return view;
 }
 
+-(BOOL)isEqualName:(NSString *)name{
+    return self.tag ==[name hash];
+}
 
 @end

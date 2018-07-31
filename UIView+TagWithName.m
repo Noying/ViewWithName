@@ -17,6 +17,7 @@
     UIView *otherView = [superView viewWithTag:tag];
     NSAssert(otherView==nil,@"have same name view in this view,please give other name");
     self.tag = tag;
+    [[NSUserDefaults standardUserDefaults]setObject:name forKey:[NSString stringWithFormat:@"%ld",tag]];
 }
 
 -(UIView*)viewWithName:(NSString *)name{
@@ -28,4 +29,7 @@
     return self.tag ==[name hash];
 }
 
+-(NSString*)getName{
+    return  [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"%ld",self.tag]];
+}
 @end

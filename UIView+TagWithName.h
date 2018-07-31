@@ -14,4 +14,6 @@
 -(UIView*)viewWithName:(NSString*)name;
 
 -(BOOL)isEqualName:(NSString*)name;
+
+-(NSString*)getName;
 @end
